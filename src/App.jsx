@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const App = () => {
 
- // primero hay que darle un estado al formulario con el useState
+ 
  const [Form, setForm] = useState({
   user: '',
   pass: '',
@@ -28,9 +28,9 @@ const { user, pass, captcha } = Form;
     
       if(user==='123456789' && pass==='987654321' && captcha==='10')
 
-        setMensaje('Correcto')
+        setMensaje('good')
 
-    else setMensaje('Incorrecto')
+    else setMensaje('error')
 
     setTimeout(() => {
         setMensaje('')
@@ -108,11 +108,11 @@ const { user, pass, captcha } = Form;
                   type='text'
                   name='captcha'
                   placeholder='realize la siguiente operacion'
-                  maxLength={3} //maximo de digito
+                  maxLength={3} 
                   value={ Form.captcha}
                   onChange={ inputCaptcha }
                   /><br/><br/> 
-                  <button type="submit">INGRESAR</button><br/><br/> 
+                  <button type="submit">Iniciar</button><br/><br/> 
 
              </form>
              <div id="m">{ Mensaje } </div>
