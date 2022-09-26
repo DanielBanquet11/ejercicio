@@ -1,0 +1,53 @@
+body{
+    text-align: center;
+    background-image: url(./assets/img/3.jpg);
+    background-color: absolute;
+    background-repeat: repeat;
+}
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    text-align: center;
+    }
+    
+    .div1 { grid-area: 2 / 2 / 5 / 5;
+    background-color: white;
+    border-radius: 7px;
+box-shadow: 0px 0px 10px 10px black;}
+    .div2 { grid-area: 2 / 2 / 3 / 5; }
+    .div3 { grid-area: 3 / 2 / 5 / 3;
+        
+    }
+    .div4 { grid-area: 3 / 3 / 5 / 5;
+        
+        border-left: black 1px solid }
+   button:hover{
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+
+   }
+   button{
+  border: none;
+  background-color: white;
+  font-size: 20px;
+
+   }
+   input[type="text"], input[type="password"]{
+    text-align: center;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 10px;
+   }
+   #m{
+    font-size: 20px;
+    
+
+   }
+   .captcha{
+    font-size: 20px;
+   }
+   
