@@ -78,7 +78,7 @@ const { user, pass, captcha } = Form;
     <div className="parent">
         
         <div className="div2">
-            <h2>Bienvenidos al sistema localizacion de zonas de acceso wifi</h2> 
+            <h1>Bienvenidos al sistema localizacion de zonas de acceso wifi</h1> 
         </div>
         <div className="div3">
               <form id="f1" onSubmit={ Submit } >
