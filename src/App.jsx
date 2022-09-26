@@ -76,19 +76,17 @@ const { user, pass, captcha } = Form;
   return (
     
     <div className="parent">
-        <div className="div1">
-            
-        </div>
+        
         <div className="div2">
             <h2>Bienvenidos al sistema localizacion de zonas de acceso wifi</h2> 
         </div>
         <div className="div3">
               <form id="f1" onSubmit={ Submit } >
-                  <legend><h3>INICIO DE SESION</h3></legend>
+                  <legend><h3>LOGIN</h3></legend>
                  <input
-                 type='text' //tipo de input
-                 name='user' //nombre del inpu
-                 placeholder='Usuario' 
+                 type='text' 
+                 name='user' 
+                 placeholder='User' 
                  maxLength={ 10 } 
                  value={ Form.user } 
                  onChange={ inputUser }
@@ -96,7 +94,7 @@ const { user, pass, captcha } = Form;
                  <input
                  type='password'
                  name='pass'
-                 placeholder='Contraseña'
+                 placeholder='Password'
                  maxLength={ 10 }
                  value={ Form.pass }
                  onChange={ inputPass }
@@ -109,7 +107,7 @@ const { user, pass, captcha } = Form;
                   <input
                   type='text'
                   name='captcha'
-                  placeholder='ingresa la respuesta de la suma'
+                  placeholder='realize la siguiente operacion'
                   maxLength={3} //maximo de digito
                   value={ Form.captcha}
                   onChange={ inputCaptcha }
