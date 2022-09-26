@@ -17,8 +17,8 @@ const { user, pass, captcha } = Form;
        
       
       
-  const UltimoDigitoUser = user.slice(8,9);
-  const UltimoDigitoPass = pass.slice(8,9);
+  const UltimoDigitoUser = user.slice(9,10);
+  const UltimoDigitoPass = pass.slice(9,10);
 
   
   
@@ -26,9 +26,9 @@ const { user, pass, captcha } = Form;
     e.preventDefault();
 
     
-      if(user==='123456789' && pass==='987654321' && captcha==='10')
+      if(user==='1103497841' && pass==='1487943011' && captcha==='2')
 
-        setMensaje('Aceptado')
+        setMensaje('Bienvenido')
 
     else setMensaje('error')
 
