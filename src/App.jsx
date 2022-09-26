@@ -28,7 +28,7 @@ const { user, pass, captcha } = Form;
     
       if(user==='123456789' && pass==='987654321' && captcha==='10')
 
-        setMensaje('good')
+        setMensaje('Aceptado')
 
     else setMensaje('error')
 
