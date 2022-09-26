@@ -8,21 +8,20 @@ export const App = () => {
   pass: '',
   captcha: ''
 })
-//Estado a los mensajes 
+
   const [Mensaje, setMensaje] = useState(false)
 
-//Extraer los valores del useState con desestructuracion:
+
 const { user, pass, captcha } = Form;
 
-      //Ahora viene la magia :D 
+       
       
-      //sacar el ultimo digito primero sacr el de user con .slice
-  //y se guarda en una constante nueva
+      
   const UltimoDigitoUser = user.slice(8,9);
   const UltimoDigitoPass = pass.slice(8,9);
 
   
-  // controlar el formulario 
+  
   const Submit = (e) => {
     e.preventDefault();
 
@@ -31,7 +30,7 @@ const { user, pass, captcha } = Form;
 
         setMensaje('Correcto')
 
-    else setMensaje('Incorrecto')//pruebalo
+    else setMensaje('Incorrecto')
 
     setTimeout(() => {
         setMensaje('')
@@ -40,9 +39,7 @@ const { user, pass, captcha } = Form;
 
 
   const inputUser = (e) => {
-    //llamas al setForm para cambiar el valor,
-    //"...Form": Es como decirle cambia el valor de user y guardame los demas datos que son pass y captcha
-    //estoy tratando de explicar lo mejor posibl ejkasdljaskl estoy entendiendo a:v
+   
     setForm({
       ...Form,
       user: e.target.value
@@ -83,7 +80,7 @@ const { user, pass, captcha } = Form;
             
         </div>
         <div className="div2">
-            <h2>🕵️‍♂️Bienvenidos al sistema localizacion de zonas de acceso wifi🕵️‍♂️</h2> 
+            <h2>Bienvenidos al sistema localizacion de zonas de acceso wifi</h2> 
         </div>
         <div className="div3">
               <form id="f1" onSubmit={ Submit } >
@@ -91,9 +88,9 @@ const { user, pass, captcha } = Form;
                  <input
                  type='text' //tipo de input
                  name='user' //nombre del inpu
-                 placeholder='Usuario' //nombre visible
+                 placeholder='Usuario' 
                  maxLength={ 10 } 
-                 value={ Form.user } //dentro del Form buscame a user) y ahora para modificar el valor:
+                 value={ Form.user } 
                  onChange={ inputUser }
                  /><br/>
                  <input
@@ -124,7 +121,7 @@ const { user, pass, captcha } = Form;
                     
         </div>
         <div className="div4">
-            <img src="../src/assets/img/mapa.png"/>
+            
         </div>
     </div>
   )
