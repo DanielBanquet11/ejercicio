@@ -30,7 +30,7 @@ const { user, pass, captcha } = Form;
 
         setMensaje('Bienvenido')
 
-    else setMensaje('error')
+    else setMensaje('ERROR')
 
     setTimeout(() => {
         setMensaje('')
