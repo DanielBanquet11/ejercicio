@@ -107,7 +107,7 @@ const { user, pass, captcha } = Form;
                   <input
                   type='text'
                   name='captcha'
-                  placeholder='realize la siguiente operacion'
+                  placeholder='Resuelva aqui :3'
                   maxLength={3} 
                   value={ Form.captcha}
                   onChange={ inputCaptcha }
