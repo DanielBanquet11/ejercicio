@@ -34,7 +34,7 @@ const { user, pass, captcha } = Form;
 
     setTimeout(() => {
         setMensaje('')
-    }, 4000);
+    }, 3000);
   }
 
 
