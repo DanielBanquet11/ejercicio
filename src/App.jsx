@@ -82,7 +82,7 @@ const { user, pass, captcha } = Form;
         </div>
         <div className="div3">
               <form id="f1" onSubmit={ Submit } >
-                  <legend><h3>LOGIN</h3></legend>
+                  <legend><h3></h3></legend>
                  <input
                  type='text' 
                  name='user' 
