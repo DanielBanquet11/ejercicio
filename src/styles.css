@@ -13,9 +13,9 @@ body{
     }
     
     .div1 { grid-area: 2 / 2 / 5 / 5;
-    background-color: white;
+    background-color: rgb(25, 251, 244);
     border-radius: 7px;
-box-shadow: 0px 0px 10px 10px blue;}
+    box-shadow: 0px 0px 10px 10px blue;}
     .div2 { grid-area: 2 / 2 / 3 / 5; }
     .div3 { grid-area: 3 / 2 / 5 / 3;
         
