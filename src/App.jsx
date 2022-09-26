@@ -120,9 +120,7 @@ const { user, pass, captcha } = Form;
              <div id="m">{ Mensaje } </div>
                     
         </div>
-        <div className="div4">
-            
-        </div>
+        
     </div>
   )
 }
