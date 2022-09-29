@@ -9,7 +9,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-     background:#1ae0ff;
+    
      background: -webkit-linear-gradient(to right,#4e5aff,#30e6fa);
      background: linear-gradient(to right,#4753fd,#30e6fa);
 }
