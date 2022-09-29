@@ -12,23 +12,26 @@ export const App = () => {
   const [Mensaje, setMensaje] = useState(false)
 
 
-const { user, pass, captcha } = Form;
+   const { user, pass, captcha } = Form;
 
        
-      
+      const [menu, setmenu]=useState(false)
       
   const UltimoDigitoUser = user.slice(9,10);
   const UltimoDigitoPass = pass.slice(9,10);
 
-  
+  const validacion = (e) =>{
+    setmenu(true)
+
+  }
   
   const Submit = (e) => {
     e.preventDefault();
 
     
       if(user==='1103497841' && pass==='1487943011' && captcha==='2')
-
-        setMensaje('Bienvenido')
+         setmenu(validacion),
+        setMensaje('')
 
     else setMensaje('ERROR')
 
@@ -74,13 +77,14 @@ const { user, pass, captcha } = Form;
 
 
   return (
-    
+        
     <div className="parent">
         
-        <div className="div2">
-            <h1>Bienvenidos al sistema localizacion de zonas de acceso wifi</h1> 
+        <div className="div1">
+            <h1>Bienvenidos al sistema localizacion de zonas de acceso wifi</h1> <br />
+            
         </div>
-        <div className="div3">
+        <div className="div2">
               <form id="f1" onSubmit={ Submit } >
                   <legend><h3></h3></legend>
                  <input
@@ -121,13 +125,29 @@ const { user, pass, captcha } = Form;
                    
                    <br/><br/> 
                   <button type="submit">Iniciar</button><br/><br/> 
-
+                  <div id="m">{ Mensaje } </div>
              </form>
-             <div id="m">{ Mensaje } </div>
+             {/* <div id="m">{ Mensaje } </div> */}
                     
         </div>
-        
+              <br />
+         { menu? <div className='menu2'>
+                 <h1> BIENVENIDO </h1>
+                   
+              <from> 
+                      <label >1.Adivinanza</label>
+                      <br/>
+                      <label >2.Cerrar session</label>
+                      <br/>
+                      <input type="text" />
+                      <br />
+                      <button type='submit'>Enter</button>
+                      <br />
+              </from>
+         </div> :undefined}
+         
     </div>
+  
   )
 }
 
