@@ -2,7 +2,6 @@ body{
     text-align: center;
     background-color: absolute;
     background-repeat: repeat;
-    background-color: rgb(150, 157, 156);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,5 +61,5 @@ body{
    }
    
 h1{
- color: blue;
+ color: black;
 }
