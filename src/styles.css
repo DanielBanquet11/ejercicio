@@ -4,7 +4,11 @@ body{
     background-repeat: repeat;
     background-color: rgb(150, 157, 156);
 }
-
+form{
+    background: rgb(245, 245, 245);
+    padding: 40px 0;
+    border-radius: 30px;
+}
     
    
     .div2 { grid-area: 2 / 2 / 3 / 5; }
