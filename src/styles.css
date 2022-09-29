@@ -12,6 +12,8 @@ body{
     background: rgb(245, 245, 245);
     padding: 40px 0;
     border-radius: 30px;
+    width: 40%;
+    display: inline-block;
 }
     
    
