@@ -3,7 +3,10 @@ body{
     background-color: absolute;
     background-repeat: repeat;
     background-color: rgb(150, 157, 156);
+    height: 650px;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 form{
     background: rgb(245, 245, 245);
