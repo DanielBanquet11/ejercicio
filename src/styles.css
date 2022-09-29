@@ -1,3 +1,7 @@
+:root{
+    --colorTexto:#6390f967;
+}
+
 body{
     text-align: center;
     background-color: absolute;
@@ -44,7 +48,7 @@ body{
     background:none ;
     width: 200px;
     font-size: 18px;
-       
+     border-bottom:1px solid var(--colorTexto) ;
     
        
        
