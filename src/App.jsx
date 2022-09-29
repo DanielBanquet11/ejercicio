@@ -90,7 +90,11 @@ const { user, pass, captcha } = Form;
                  maxLength={ 10 } 
                  value={ Form.user } 
                  onChange={ inputUser }
-                 /><br/>
+                 /> <span class="barra"></span>
+                 <label for="">user</label>
+                  
+                  <br/>
+                  
                  <input
                  type='password'
                  name='pass'
@@ -98,12 +102,15 @@ const { user, pass, captcha } = Form;
                  maxLength={ 10 }
                  value={ Form.pass }
                  onChange={ inputPass }
-                 />
+                 /> <span class="barra"></span>
+                 <label for="">password</label>
+                  
                   <br/> 
                   <div className='captcha'> 
                   { UltimoDigitoUser } + { UltimoDigitoPass }
 
                   </div>
+
                   <input
                   type='text'
                   name='captcha'
@@ -111,7 +118,11 @@ const { user, pass, captcha } = Form;
                   maxLength={3} 
                   value={ Form.captcha}
                   onChange={ inputCaptcha }
-                  /><br/><br/> 
+                  /> <span class="barra"></span>
+                 <label for="">Captcha</label>
+                   
+                   
+                   <br/><br/> 
                   <button type="submit">Iniciar</button><br/><br/> 
 
              </form>
