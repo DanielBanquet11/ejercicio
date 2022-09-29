@@ -47,11 +47,14 @@ body{
     background:none ;
     width: 200px;
     font-size: 18px;
-     border-bottom:1px solid var(--colorTexto) ;
-    
-       
-       
+     border-bottom:1px solid var(--colorTexto) ;     
    }
+
+input:focus{
+    outline:none;
+}
+
+
    #m{
     font-size: 20px;
     
