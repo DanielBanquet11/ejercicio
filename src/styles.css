@@ -1,5 +1,5 @@
 :root{
-    --colorTexto:blue;
+    --colorTexto:black;
 }
 
 body{
@@ -47,7 +47,7 @@ body{
     background:none ;
     width: 200px;
     font-size: 18px;
-     border-bottom:1px solid var(--colorTexto) ;     
+     border-bottom:2px solid var(--colorTexto) ;     
    }
 
 input:focus{
