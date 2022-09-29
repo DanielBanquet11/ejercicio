@@ -36,9 +36,19 @@ form{
    input[type="text"], input[type="password"]{
     text-align: center;
     border: none;
-    font-size: 20px;
+    
     margin-bottom: 10px;
        border-radius: 10px;
+       background:none ;
+       
+    color: rgb(108, 109, 109);
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    
+       
+       
    }
    #m{
     font-size: 20px;
