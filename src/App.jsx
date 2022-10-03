@@ -2,12 +2,21 @@ import React, { useState } from 'react'
 
 export const App = () => {
 
+
+  const [MEN2, setMEN2 ] = useState({
+   form2: ''
+  })     // menu
  
  const [Form, setForm] = useState({
   user: '',
   pass: '',
   captcha: ''
 })
+   
+   const {form2} = MEN2;   // menu
+
+
+
 
   const [Mensaje, setMensaje] = useState(false)
 
@@ -16,6 +25,13 @@ export const App = () => {
 
        
       const [menu, setmenu]=useState(false)
+
+      const [menua , setmenua]=useState(false)
+
+      const  vma = (e) =>{
+        setmenua(true)
+    
+      }
       
   const UltimoDigitoUser = user.slice(9,10);
   const UltimoDigitoPass = pass.slice(9,10);
@@ -29,15 +45,43 @@ export const App = () => {
     e.preventDefault();
 
     
-      if(user==='1103497841' && pass==='1487943011' && captcha==='2')
+      if(user==='1103497841' && pass==='1487943011' && captcha==='2'){
          setmenu(validacion),
+         document.getElementById("contenedor-parent").style.display= "none"
         setMensaje('')
 
-    else setMensaje('ERROR')
+       
+
+      }else{ setMensaje('ERROR')
 
     setTimeout(() => {
         setMensaje('')
     }, 3000);
+  }
+}
+
+
+  const Submit2 = (e) =>{
+    e.preventDefault();
+     if (form2 === '1' ){
+      alert('adivinaza'), setmenua(vma)
+      document.getElementById("men2").style.display= "none"
+     } else{
+      if(form2 === '2'  ){
+
+          alert('HASTA PRONTO')
+          location.reload();
+          
+      } else{
+        if (form2 != '1', '2' ){
+           alert('error')
+        }
+      }
+     }
+
+
+
+
   }
 
 
@@ -71,6 +115,14 @@ export const App = () => {
     
   }
   
+  // menu
+  const inputmenu = (e) =>{
+
+    setMEN2({
+      ...MEN2,
+      form2: e.target.value
+    })
+  }
  
 
 
@@ -78,14 +130,16 @@ export const App = () => {
 
   return (
         
-    <div className="parent">
+    <div className="parent" >
         
         <div className="div1">
             <h1>Bienvenidos al sistema localizacion de zonas de acceso wifi</h1> <br />
             
         </div>
-        <div className="div2">
+        <div className="div2" id='contenedor-parent'>
               <form id="f1" onSubmit={ Submit } >
+
+                
                   <legend><h3></h3></legend>
                  <input
                  type='text' 
@@ -95,7 +149,7 @@ export const App = () => {
                  value={ Form.user } 
                  onChange={ inputUser }
                  /> 
-                  
+                
                   <br/>
                   
                  <input
@@ -131,21 +185,45 @@ export const App = () => {
                     
         </div>
               <br />
-         { menu? <div className='menu2'>
+         { menu? <div className='menu2' id='men2'>
                  <h1> BIENVENIDO </h1>
                    
-              <from> 
+              <form onSubmit={ Submit2 }> 
                       <label >1.Adivinanza</label>
                       <br/>
                       <label >2.Cerrar session</label>
                       <br/>
-                      <input type="text" />
+                      <input type="text" name='menu'
+                      value={ MEN2.form2}
+                      onChange={ inputmenu } 
+
+
+                      />
                       <br />
-                      <button type='submit'>Enter</button>
+                      <button type='submit' 
+                       
+                      >Enter</button>
+
                       <br />
-              </from>
+              </form>
          </div> :undefined}
-         
+            
+         { menua ?  <div className='adi'>
+               <h1> ADIVINANZA</h1>
+               <br />
+               <h3>cual es el numero secreto  [0 - 10] </h3>
+                <form >
+                    <input type="text" name='adivinanza' />
+                    <br />
+                    <button type='submit'>Respuesta</button>
+
+
+                </form>
+
+            </div> : undefined}
+          
+
+
     </div>
   
   )
