@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export const App = () => {
-
-
+      
+  const [MEN3, setMEN3 ] = useState({
+    form3: ''
+   })    // ADIVINANZA
+     
   const [MEN2, setMEN2 ] = useState({
    form2: ''
   })     // menu
@@ -13,8 +16,34 @@ export const App = () => {
   captcha: ''
 })
    
+ const [ cont1 , setcont1] = useState(0); // contador 1
+ useEffect( () => {
+ console.log("kkkk" + cont1)
+ },[cont1]);
+
+ const aumentar = () => {
+   setcont1(cont1 + 1)
+ }
+
+ const [ cont2 , setcont2] = useState(0); // contador 2
+ useEffect( () => {
+ console.log("hhh" + cont2)
+ },[cont2]);
+
+ const aumentar2 = () => {
+  console.log("hhhh" + cont2)
+   setcont2(cont2 + 1)
+ }
+
+
+
+
+const [num , setnum] = useState(0)
+console.log(num)          //numero aleatorio
+
    const {form2} = MEN2;   // menu
 
+   const {form3} = MEN3; 
 
 
 
@@ -30,8 +59,8 @@ export const App = () => {
 
       const  vma = (e) =>{
         setmenua(true)
-    
       }
+      
       
   const UltimoDigitoUser = user.slice(9,10);
   const UltimoDigitoPass = pass.slice(9,10);
@@ -64,21 +93,23 @@ export const App = () => {
   const Submit2 = (e) =>{
     e.preventDefault();
      if (form2 === '1' ){
-      alert('adivinaza'), setmenua(vma)
+      setmenua(vma),setnum(Math.floor(Math.random() * 10))
       document.getElementById("men2").style.display= "none"
      } else{
       if(form2 === '2'  ){
 
           alert('HASTA PRONTO')
           location.reload();
-          
-      } else{
-        if (form2 != '1', '2' ){
-           alert('error')
-        }
-      }
+         } else{
+          if(cont2 === 3){
+              alert("Limite de intentos alcanzados "), location.reload();
+          }else {
+            if(form2 != '1' , '2'){
+                   alert("error")
+            }
+          }
+         } 
      }
-
 
 
 
@@ -124,8 +155,38 @@ export const App = () => {
     })
   }
  
+  const inputmenu3 = (e) =>{
 
+    setMEN3({
+      ...MEN3,
+      form3: e.target.value
+    })
+  }   // ADIVINANZA
+    
+          
+    const Submit3 = (e) =>{
+      e.preventDefault();
+      if (form3 == num){
+        alert("Adivinaste en   " + cont1 + "  intentos") 
+        document.getElementById("adi").style.display= "none"
+        document.getElementById("men2").style.display= "block"
+      } else{
+        if (form3 > 10 || form3 < 0){
+             alert("ESTAS FUERA DE LOS PARAMETROS")
+        } else{
+          if( form3 > num){
+              alert("TE PASASTE..")
+          } else {
+            if(form3 < num){
+              alert("ESTAS POR DEBAJO..")
+            }
+          }
+        }
+      }
 
+      
+
+    }  // ADIVINANZA
 
 
   return (
@@ -200,7 +261,7 @@ export const App = () => {
 
                       />
                       <br />
-                      <button type='submit' 
+                      <button type='submit' onClick={aumentar2}
                        
                       >Enter</button>
 
@@ -208,14 +269,17 @@ export const App = () => {
               </form>
          </div> :undefined}
             
-         { menua ?  <div className='adi'>
+         { menua ?  <div className='adi' id='adi'>
                <h1> ADIVINANZA</h1>
                <br />
                <h3>cual es el numero secreto  [0 - 10] </h3>
-                <form >
-                    <input type="text" name='adivinanza' />
+                <form  onSubmit={ Submit3 }>
+                    <input type="text" name='adivinanza'
+                     value={ MEN3.form3}
+                     onChange={ inputmenu3 } 
+                     />
                     <br />
-                    <button type='submit'>Respuesta</button>
+                    <button type='submit' onClick={aumentar}>Respuesta</button>
 
 
                 </form>
@@ -228,4 +292,3 @@ export const App = () => {
   
   )
 }
-
